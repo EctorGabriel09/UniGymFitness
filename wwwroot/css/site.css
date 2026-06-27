@@ -82,3 +82,94 @@ body {
   color: #fff;
   padding: 20px 0;
 }
+
+.diferenciais-section {
+  background-color: #f8f9fa;
+}
+
+.diferencial-card {
+  border: none;
+  border-radius: 18px;
+  transition: 0.3s;
+}
+
+.diferencial-card:hover {
+  transform: translateY(-8px);
+}
+
+.diferencial-icon {
+  font-size: 42px;
+}
+
+.contato-section {
+  background-color: #000;
+  color: #fff;
+}
+
+.contato-section .text-muted {
+  color: #ccc !important;
+}
+
+.contato-card {
+  background-color: #111;
+  border-radius: 18px;
+  padding: 30px 20px;
+  height: 100%;
+  min-height: 250px;
+  transition: 0.3s;
+}
+
+.contato-card:hover {
+  transform: translateY(-8px);
+}
+
+.contato-icon {
+  font-size: 38px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icone-contato {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.login-section {
+  min-height: 85vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+    url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 15px;
+}
+
+.login-card {
+  background-color: #111;
+  color: #fff;
+  width: 100%;
+  max-width: 430px;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.login-logo {
+  height: 90px;
+}
+
+.login-card .form-control {
+  background-color: #222;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+.login-card .form-control::placeholder {
+  color: #aaa;
+}
