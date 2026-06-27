@@ -1,0 +1,70 @@
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+<section class="login-section">
+    <div class="login-card cadastro-card">
+
+        <div class="text-center mb-4">
+            <img src="~/images/logo/logo-branca.png"
+                 alt="Uni Gym Fitness"
+                 class="login-logo" />
+
+            <h2 class="fw-bold mt-4">Crie sua conta</h2>
+            <p class="text-muted">Comece sua jornada na Uni Gym Fitness.</p>
+        </div>
+
+        <form>
+
+            <div class="mb-3">
+                <label class="form-label">Nome completo</label>
+                <input type="text" class="form-control" placeholder="Digite seu nome completo">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">E-mail</label>
+                <input type="email" class="form-control" placeholder="Digite seu e-mail">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Telefone</label>
+                <input type="text" class="form-control" placeholder="Digite seu telefone">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Plano</label>
+                <select class="form-control">
+                    <option>Selecione um plano</option>
+                    <option>Bronze - R$ 89,90</option>
+                    <option>Silver - R$ 129,90</option>
+                    <option>Gold - R$ 179,90</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Senha</label>
+                <input type="password" class="form-control" placeholder="Digite sua senha">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Confirmar senha</label>
+                <input type="password" class="form-control" placeholder="Confirme sua senha">
+            </div>
+
+            <button type="submit" class="btn btn-warning w-100 fw-bold mt-3">
+                Criar conta
+            </button>
+
+        </form>
+
+        <div class="text-center mt-4">
+            <p class="mb-1">Já possui uma conta?</p>
+            <a asp-controller="Account"
+               asp-action="Login"
+               class="text-warning fw-bold text-decoration-none">
+                Entrar agora
+            </a>
+        </div>
+
+    </div>
+</section>
