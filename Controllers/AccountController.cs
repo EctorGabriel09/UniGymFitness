@@ -31,7 +31,7 @@ namespace UniGymFitness.Controllers
                 return View();
             }
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Dashboard");
         }
 
         public IActionResult Cadastro()

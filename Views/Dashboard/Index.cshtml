@@ -1,0 +1,90 @@
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div class="container mt-5">
+
+    <h1 class="fw-bold mb-2">
+        Painel Administrativo
+    </h1>
+
+    <p class="text-muted mb-5">
+        Bem-vindo à área administrativa da Uni Gym Fitness.
+    </p>
+
+    <div class="row">
+
+        <div class="col-md-3 mb-4">
+
+            <a asp-controller="Usuarios"
+               asp-action="Index"
+               class="text-decoration-none text-dark">
+
+                <div class="card shadow text-center h-100">
+
+                    <div class="card-body">
+
+                        <h1>👤</h1>
+                        <h5>Usuários</h5>
+                        <p>Gerenciar usuários cadastrados</p>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+        <div class="col-md-3 mb-4">
+
+            <div class="card shadow text-center h-100">
+
+                <div class="card-body">
+
+                    <h1>💳</h1>
+                    <h5>Planos</h5>
+                    <p>Gerenciar planos da academia</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3 mb-4">
+
+            <div class="card shadow text-center h-100">
+
+                <div class="card-body">
+
+                    <h1>🏋️</h1>
+                    <h5>Produtos</h5>
+                    <p>Gerenciar produtos e serviços</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3 mb-4">
+
+            <div class="card shadow text-center h-100">
+
+                <div class="card-body">
+
+                    <h1>📊</h1>
+                    <h5>Relatórios</h5>
+                    <p>Visualizar indicadores</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

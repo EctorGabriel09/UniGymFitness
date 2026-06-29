@@ -1,0 +1,80 @@
+@model IEnumerable<UniGymFitness.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Usuários";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div class="container">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h2 class="fw-bold">Usuários</h2>
+            <p class="text-muted">Gerencie os usuários cadastrados na Uni Gym Fitness.</p>
+        </div>
+
+        <a asp-controller="Account"
+           asp-action="Cadastro"
+           class="btn btn-warning fw-bold">
+            + Novo Usuário
+        </a>
+
+    </div>
+
+    <table class="table table-hover table-bordered align-middle">
+
+        <thead class="table-dark">
+
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Telefone</th>
+                <th>Plano</th>
+                <th width="200">Ações</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        @foreach (var usuario in Model)
+        {
+            <tr>
+
+                <td>@usuario.Nome</td>
+                <td>@usuario.Email</td>
+                <td>@usuario.Telefone</td>
+                <td>@usuario.Plano</td>
+
+                <td>
+
+                    <a asp-controller="Usuarios"
+                       asp-action="Editar"
+                       asp-route-id="@usuario.Id"
+                       class="btn btn-primary btn-sm">
+
+                        Editar
+
+                    </a>
+
+                    <a asp-controller="Usuarios"
+                       asp-action="Excluir"
+                       asp-route-id="@usuario.Id"
+                       class="btn btn-danger btn-sm"
+                       onclick="return confirm('Tem certeza que deseja excluir este usuário?');">
+
+                        Excluir
+
+                    </a>
+
+                </td>
+
+            </tr>
+        }
+
+        </tbody>
+
+    </table>
+
+</div>

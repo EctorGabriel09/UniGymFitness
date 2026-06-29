@@ -177,3 +177,36 @@ body {
 .cadastro-card {
   max-width: 520px;
 }
+
+.dashboard-body {
+  background-color: #f4f4f4;
+}
+
+.dashboard-header {
+  background-color: #000;
+  padding: 22px 0;
+}
+
+.dashboard-logo {
+  height: 90px;
+}
+
+.dashboard-menu a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.dashboard-menu a:hover {
+  color: #ffc107;
+}
+
+.dashboard-sair {
+  color: #ffc107 !important;
+}
+
+.dashboard-main {
+  padding: 40px 0;
+}

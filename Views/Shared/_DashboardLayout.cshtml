@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - Uni Gym Fitness</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body class="dashboard-body">
+
+    <header class="dashboard-header">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a asp-controller="Dashboard" asp-action="Index">
+                <img src="~/images/logo/logo-branca.png"
+                     alt="Uni Gym Fitness"
+                     class="dashboard-logo" />
+            </a>
+
+            <nav class="dashboard-menu">
+                <a asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+                <a href="#">Usuários</a>
+                <a href="#">Planos</a>
+                <a href="#">Produtos</a>
+                <a asp-controller="Account" asp-action="Login" class="dashboard-sair">Sair</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="dashboard-main">
+        @RenderBody()
+    </main>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
