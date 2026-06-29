@@ -14,41 +14,63 @@
             <p class="text-muted">Comece sua jornada na Uni Gym Fitness.</p>
         </div>
 
-        <form>
+        <form asp-controller="Account" asp-action="Cadastro" method="post">
 
             <div class="mb-3">
                 <label class="form-label">Nome completo</label>
-                <input type="text" class="form-control" placeholder="Digite seu nome completo">
+                <input type="text"
+                       name="Nome"
+                       class="form-control"
+                       placeholder="Digite seu nome completo"
+                       required>
             </div>
 
             <div class="mb-3">
                 <label class="form-label">E-mail</label>
-                <input type="email" class="form-control" placeholder="Digite seu e-mail">
+                <input type="email"
+                       name="Email"
+                       class="form-control"
+                       placeholder="Digite seu e-mail"
+                       required>
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Telefone</label>
-                <input type="text" class="form-control" placeholder="Digite seu telefone">
+                <input type="text"
+                       name="Telefone"
+                       class="form-control"
+                       placeholder="Digite seu telefone"
+                       required>
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Plano</label>
-                <select class="form-control">
-                    <option>Selecione um plano</option>
-                    <option>Bronze - R$ 89,90</option>
-                    <option>Silver - R$ 129,90</option>
-                    <option>Gold - R$ 179,90</option>
+                <select name="Plano"
+                        class="form-control"
+                        required>
+                    <option value="">Selecione um plano</option>
+                    <option value="Bronze">Bronze - R$ 89,90</option>
+                    <option value="Silver">Silver - R$ 129,90</option>
+                    <option value="Gold">Gold - R$ 179,90</option>
                 </select>
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Senha</label>
-                <input type="password" class="form-control" placeholder="Digite sua senha">
+                <input type="password"
+                       name="Senha"
+                       class="form-control"
+                       placeholder="Digite sua senha"
+                       required>
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Confirmar senha</label>
-                <input type="password" class="form-control" placeholder="Confirme sua senha">
+                <input type="password"
+                       name="ConfirmarSenha"
+                       class="form-control"
+                       placeholder="Confirme sua senha"
+                       required>
             </div>
 
             <button type="submit" class="btn btn-warning w-100 fw-bold mt-3">

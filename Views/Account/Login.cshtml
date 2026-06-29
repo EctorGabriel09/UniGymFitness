@@ -14,13 +14,22 @@
             <p class="text-muted">Acesse sua conta para continuar.</p>
         </div>
 
-        <form>
+        @if (ViewBag.Erro != null)
+        {
+            <div class="alert alert-danger text-center">
+                @ViewBag.Erro
+            </div>
+        }
+
+        <form asp-controller="Account" asp-action="Login" method="post">
 
             <div class="mb-3">
                 <label class="form-label">E-mail</label>
                 <input type="email"
+                       name="Email"
                        class="form-control"
-                       placeholder="Digite seu e-mail">
+                       placeholder="Digite seu e-mail"
+                       required>
             </div>
 
             <div class="mb-3">
@@ -29,19 +38,17 @@
 
                 <div class="input-group">
 
-                    <input
-                        type="password"
-                        class="form-control"
-                        id="senha"
-                        placeholder="Digite sua senha">
+                    <input type="password"
+                           class="form-control"
+                           id="senha"
+                           name="Senha"
+                           placeholder="Digite sua senha"
+                           required>
 
-                    <button
-                        class="btn btn-outline-warning"
-                        type="button"
-                        id="btnMostrarSenha">
-
+                    <button class="btn btn-outline-warning"
+                            type="button"
+                            id="btnMostrarSenha">
                         Mostrar
-
                     </button>
 
                 </div>
@@ -52,36 +59,27 @@
 
                 <div class="form-check">
 
-                    <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="lembrarMe">
+                    <input class="form-check-input"
+                           type="checkbox"
+                           id="lembrarMe">
 
-                    <label
-                        class="form-check-label"
-                        for="lembrarMe">
-
+                    <label class="form-check-label"
+                           for="lembrarMe">
                         Lembrar-me
-
                     </label>
 
                 </div>
 
                 <a href="#"
                    class="text-warning text-decoration-none">
-
                     Esqueci minha senha
-
                 </a>
 
             </div>
 
-            <button
-                type="submit"
-                class="btn btn-warning w-100 fw-bold">
-
+            <button type="submit"
+                    class="btn btn-warning w-100 fw-bold">
                 Entrar
-
             </button>
 
         </form>
@@ -93,9 +91,9 @@
             </p>
 
             <a asp-controller="Account"
-                asp-action="Cadastro"
-                class="text-warning fw-bold text-decoration-none">
-                    Criar uma conta
+               asp-action="Cadastro"
+               class="text-warning fw-bold text-decoration-none">
+                Criar uma conta
             </a>
 
         </div>
