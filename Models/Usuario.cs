@@ -13,5 +13,8 @@ namespace UniGymFitness.Models
         public string Senha { get; set; } = string.Empty;
 
         public string Plano { get; set; } = string.Empty;
+
+        // Novo campo
+        public string TipoUsuario { get; set; } = "Aluno";
     }
 }

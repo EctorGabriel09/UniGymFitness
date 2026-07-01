@@ -1,0 +1,53 @@
+@model UniGymFitness.Models.Usuario
+
+@{
+    ViewData["Title"] = "Área do Aluno";
+}
+
+<section class="container py-5">
+
+    <div class="card shadow">
+        <div class="card-body p-5">
+
+            <h2 class="fw-bold mb-3">
+                Bem-vindo, @Model.Nome 👋
+            </h2>
+
+            <p class="text-muted mb-4">
+                Esta é sua área do aluno na Uni Gym Fitness.
+            </p>
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+                    <strong>E-mail:</strong>
+                    <p>@Model.Email</p>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <strong>Telefone:</strong>
+                    <p>@Model.Telefone</p>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <strong>Plano contratado:</strong>
+                    <p>@Model.Plano</p>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <strong>Tipo de usuário:</strong>
+                    <p>@Model.TipoUsuario</p>
+                </div>
+
+            </div>
+
+            <a asp-controller="Account"
+               asp-action="Logout"
+               class="btn btn-danger mt-3">
+                Sair
+            </a>
+
+        </div>
+    </div>
+
+</section>
