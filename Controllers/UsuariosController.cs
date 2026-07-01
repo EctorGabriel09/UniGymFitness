@@ -13,17 +13,29 @@ namespace UniGymFitness.Controllers
             _context = context;
         }
 
-        // LISTAR
+        private bool UsuarioEhAdministrador()
+        {
+            return HttpContext.Session.GetString("TipoUsuario") == "Administrador";
+        }
+
         public IActionResult Index()
         {
-            var usuarios = _context.Usuarios.ToList();
+            if (!UsuarioEhAdministrador())
+            {
+                return RedirectToAction("Login", "Account");
+            }
 
+            var usuarios = _context.Usuarios.ToList();
             return View(usuarios);
         }
 
-        // ABRIR EDIÇÃO
         public IActionResult Editar(int id)
         {
+            if (!UsuarioEhAdministrador())
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             var usuario = _context.Usuarios.Find(id);
 
             if (usuario == null)
@@ -32,10 +44,14 @@ namespace UniGymFitness.Controllers
             return View(usuario);
         }
 
-        // SALVAR EDIÇÃO
         [HttpPost]
         public IActionResult Editar(Usuario usuario)
         {
+            if (!UsuarioEhAdministrador())
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Usuarios.Update(usuario);
@@ -47,9 +63,13 @@ namespace UniGymFitness.Controllers
             return View(usuario);
         }
 
-        // EXCLUIR
         public IActionResult Excluir(int id)
         {
+            if (!UsuarioEhAdministrador())
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             var usuario = _context.Usuarios.Find(id);
 
             if (usuario == null)

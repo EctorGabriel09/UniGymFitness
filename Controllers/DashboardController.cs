@@ -14,10 +14,14 @@ namespace UniGymFitness.Controllers
 
         public IActionResult Index()
         {
-            // Total de usuários cadastrados
-            ViewBag.TotalUsuarios = _context.Usuarios.Count();
+            var tipoUsuario = HttpContext.Session.GetString("TipoUsuario");
 
-            // Nome do usuário logado
+            if (tipoUsuario != "Administrador")
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            ViewBag.TotalUsuarios = _context.Usuarios.Count();
             ViewBag.NomeUsuario = HttpContext.Session.GetString("NomeUsuario");
 
             return View();
