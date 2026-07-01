@@ -9,9 +9,18 @@
         Painel Administrativo
     </h1>
 
-    <p class="text-muted mb-5">
-        Bem-vindo à área administrativa da Uni Gym Fitness.
-    </p>
+    @if (ViewBag.NomeUsuario != null)
+    {
+        <p class="text-muted mb-5">
+            Bem-vindo, <strong>@ViewBag.NomeUsuario</strong> 👋
+        </p>
+    }
+    else
+    {
+        <p class="text-muted mb-5">
+            Bem-vindo à área administrativa da Uni Gym Fitness.
+        </p>
+    }
 
     <div class="row">
 
@@ -46,7 +55,8 @@
 
                     <h1>💳</h1>
                     <h5>Planos</h5>
-                    <p>Gerenciar planos da academia</p>
+                    <h3 class="fw-bold text-warning">Em breve</h3>
+                    <p>Cadastro de planos</p>
 
                 </div>
 
@@ -62,7 +72,8 @@
 
                     <h1>🏋️</h1>
                     <h5>Produtos</h5>
-                    <p>Gerenciar produtos e serviços</p>
+                    <h3 class="fw-bold text-warning">Em breve</h3>
+                    <p>Cadastro de produtos</p>
 
                 </div>
 
@@ -78,7 +89,8 @@
 
                     <h1>📊</h1>
                     <h5>Relatórios</h5>
-                    <p>Visualizar indicadores</p>
+                    <h3 class="fw-bold text-warning">Em breve</h3>
+                    <p>Dashboard analítico</p>
 
                 </div>
 

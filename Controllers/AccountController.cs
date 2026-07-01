@@ -14,6 +14,8 @@ namespace UniGymFitness.Controllers
             _context = context;
         }
 
+        // ================= LOGIN =================
+
         public IActionResult Login()
         {
             return View();
@@ -31,8 +33,23 @@ namespace UniGymFitness.Controllers
                 return View();
             }
 
+            // Salva informações do usuário na sessão
+            HttpContext.Session.SetString("NomeUsuario", usuario.Nome);
+            HttpContext.Session.SetInt32("IdUsuario", usuario.Id);
+
             return RedirectToAction("Index", "Dashboard");
         }
+
+        // ================= LOGOUT =================
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+
+            return RedirectToAction("Login");
+        }
+
+        // ================= CADASTRO =================
 
         public IActionResult Cadastro()
         {
