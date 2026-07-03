@@ -22,28 +22,23 @@
 
             <nav class="dashboard-menu">
 
-                <a asp-controller="Dashboard"
-                   asp-action="Index">
+                <a asp-controller="Dashboard" asp-action="Index">
                     Dashboard
                 </a>
 
-                <a asp-controller="Usuarios"
-                   asp-action="Index">
+                <a asp-controller="Usuarios" asp-action="Index">
                     Usuários
                 </a>
 
-                <a asp-controller="Planos"
-                   asp-action="Index">
+                <a asp-controller="Planos" asp-action="Index">
                     Planos
                 </a>
 
-                <a asp-controller="Produtos"
-                   asp-action="Index">
+                <a asp-controller="Produtos" asp-action="Index">
                     Produtos
                 </a>
 
-                <a asp-controller="Relatorios"
-                   asp-action="Index">
+                <a asp-controller="Relatorios" asp-action="Index">
                     Relatórios
                 </a>
 
@@ -59,7 +54,27 @@
     </header>
 
     <main class="dashboard-main">
+
+        <div class="container">
+
+            @if (TempData["Sucesso"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+
+                    ✅ @TempData["Sucesso"]
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="alert">
+                    </button>
+
+                </div>
+            }
+
+        </div>
+
         @RenderBody()
+
     </main>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

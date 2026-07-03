@@ -39,7 +39,9 @@ namespace UniGymFitness.Controllers
             var usuario = _context.Usuarios.Find(id);
 
             if (usuario == null)
+            {
                 return NotFound();
+            }
 
             return View(usuario);
         }
@@ -52,15 +54,24 @@ namespace UniGymFitness.Controllers
                 return RedirectToAction("Login", "Account");
             }
 
-            if (ModelState.IsValid)
-            {
-                _context.Usuarios.Update(usuario);
-                _context.SaveChanges();
+            var usuarioBanco = _context.Usuarios.Find(usuario.Id);
 
-                return RedirectToAction("Index");
+            if (usuarioBanco == null)
+            {
+                return NotFound();
             }
 
-            return View(usuario);
+            // Atualiza apenas os campos permitidos
+            usuarioBanco.Nome = usuario.Nome;
+            usuarioBanco.Email = usuario.Email;
+            usuarioBanco.Telefone = usuario.Telefone;
+            usuarioBanco.Plano = usuario.Plano;
+
+            _context.SaveChanges();
+
+            TempData["Sucesso"] = "Usuário atualizado com sucesso!";
+
+            return RedirectToAction("Index");
         }
 
         public IActionResult Excluir(int id)
@@ -73,10 +84,14 @@ namespace UniGymFitness.Controllers
             var usuario = _context.Usuarios.Find(id);
 
             if (usuario == null)
+            {
                 return NotFound();
+            }
 
             _context.Usuarios.Remove(usuario);
             _context.SaveChanges();
+
+            TempData["Sucesso"] = "Usuário excluído com sucesso!";
 
             return RedirectToAction("Index");
         }
