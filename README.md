@@ -159,6 +159,14 @@ dotnet run
 
 ---
 
+# ☁️ Hospedagem
+
+O site está hospedado no Azure App Service:
+
+https://unigymfitness.azurewebsites.net
+
+---
+
 # 📷 Capturas de Tela
 
 As imagens abaixo estão disponíveis em `wwwroot/images/readme/`.
