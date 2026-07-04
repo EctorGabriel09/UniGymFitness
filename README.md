@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="images/logo/logo-preta.png" width="220"/>
+<img src="wwwroot/images/logo/logo-preta.png" width="220"/>
 
 # 🏋️ Uni Gym Fitness
 
@@ -159,17 +159,21 @@ dotnet run
 
 ---
 
-# 📷 Screenshots
+# 📷 Capturas de Tela
 
-> Em breve serão adicionadas imagens das principais telas do sistema.
+As imagens abaixo estão disponíveis em `wwwroot/images/readme/`.
 
-- Home
-- Login
-- Dashboard
-- Usuários
-- Planos
-- Produtos
-- Relatórios
+<div align="center">
+  <img src="wwwroot/images/readme/Captura%20de%20tela%202026-07-03%20214313.png" alt="Tela inicial" width="280"/>
+  <img src="wwwroot/images/readme/Captura%20de%20tela%202026-07-03%20214339.png" alt="Login" width="280"/>
+  <img src="wwwroot/images/readme/Captura%20de%20tela%202026-07-03%20214349.png" alt="Dashboard" width="280"/>
+</div>
+
+<div align="center" style="margin-top: 16px;">
+  <img src="wwwroot/images/readme/Captura%20de%20tela%202026-07-03%20214405.png" alt="Usuários" width="280"/>
+  <img src="wwwroot/images/readme/Captura%20de%20tela%202026-07-03%20214448.png" alt="Planos" width="280"/>
+  <img src="wwwroot/images/readme/Captura%20de%20tela%202026-07-03%20214510.png" alt="Produtos e relatórios" width="280"/>
+</div>
 
 ---
 
