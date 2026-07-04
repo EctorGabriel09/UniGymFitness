@@ -163,7 +163,7 @@ dotnet run
 
 O site está hospedado no Azure App Service:
 
-https://unigymfitness.azurewebsites.net
+https://unigymfitness-dvggfre8g0hhendn.centralus-01.azurewebsites.net/
 
 ---
 
