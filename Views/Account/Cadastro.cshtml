@@ -1,3 +1,5 @@
+@model UniGymFitness.Models.Usuario
+
 @{
     ViewData["Title"] = "Cadastro";
 }
@@ -15,23 +17,28 @@
         </div>
 
         <form asp-controller="Account" asp-action="Cadastro" method="post" id="formCadastro">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
             <div class="mb-3">
                 <label class="form-label">Nome completo</label>
                 <input type="text"
                        name="Nome"
+                       value="@Model?.Nome"
                        class="form-control"
                        placeholder="Digite seu nome completo"
                        required>
+                <span asp-validation-for="Nome" class="text-danger small"></span>
             </div>
 
             <div class="mb-3">
                 <label class="form-label">E-mail</label>
                 <input type="email"
                        name="Email"
+                       value="@Model?.Email"
                        class="form-control"
                        placeholder="Digite seu e-mail"
                        required>
+                <span asp-validation-for="Email" class="text-danger small"></span>
             </div>
 
             <div class="mb-3">
@@ -39,22 +46,25 @@
                 <input type="text"
                        name="Telefone"
                        id="telefone"
+                       value="@Model?.Telefone"
                        class="form-control"
                        placeholder="(61) 99999-9999"
                        maxlength="15"
                        pattern="\([0-9]{2}\) 9[0-9]{4}-[0-9]{4}"
                        title="Digite um celular válido no formato (61) 99999-9999"
                        required>
+                <span asp-validation-for="Telefone" class="text-danger small"></span>
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Plano</label>
                 <select name="Plano" class="form-control" required>
                     <option value="">Selecione um plano</option>
-                    <option value="Bronze">Bronze - R$ 89,90</option>
-                    <option value="Silver">Silver - R$ 129,90</option>
-                    <option value="Gold">Gold - R$ 179,90</option>
+                    <option value="Bronze" selected="@(Model?.Plano == "Bronze")">Bronze - R$ 89,90</option>
+                    <option value="Silver" selected="@(Model?.Plano == "Silver")">Silver - R$ 129,90</option>
+                    <option value="Gold" selected="@(Model?.Plano == "Gold")">Gold - R$ 179,90</option>
                 </select>
+                <span asp-validation-for="Plano" class="text-danger small"></span>
             </div>
 
             <div class="mb-3">
@@ -65,6 +75,7 @@
                        class="form-control"
                        placeholder="Digite sua senha"
                        required>
+                <span asp-validation-for="Senha" class="text-danger small"></span>
             </div>
 
             <div class="mb-3">

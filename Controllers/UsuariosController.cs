@@ -25,7 +25,10 @@ namespace UniGymFitness.Controllers
                 return RedirectToAction("Login", "Account");
             }
 
-            var usuarios = _context.Usuarios.ToList();
+            var usuarios = _context.Usuarios
+                .OrderBy(u => u.Nome)
+                .ToList();
+
             return View(usuarios);
         }
 
@@ -47,6 +50,7 @@ namespace UniGymFitness.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Editar(Usuario usuario)
         {
             if (!UsuarioEhAdministrador())
@@ -62,10 +66,10 @@ namespace UniGymFitness.Controllers
             }
 
             // Atualiza apenas os campos permitidos
-            usuarioBanco.Nome = usuario.Nome;
-            usuarioBanco.Email = usuario.Email;
-            usuarioBanco.Telefone = usuario.Telefone;
-            usuarioBanco.Plano = usuario.Plano;
+            usuarioBanco.Nome = usuario.Nome?.Trim() ?? string.Empty;
+            usuarioBanco.Email = usuario.Email?.Trim() ?? string.Empty;
+            usuarioBanco.Telefone = usuario.Telefone?.Trim() ?? string.Empty;
+            usuarioBanco.Plano = usuario.Plano?.Trim() ?? string.Empty;
 
             _context.SaveChanges();
 
@@ -74,6 +78,8 @@ namespace UniGymFitness.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Excluir(int id)
         {
             if (!UsuarioEhAdministrador())
@@ -86,6 +92,14 @@ namespace UniGymFitness.Controllers
             if (usuario == null)
             {
                 return NotFound();
+            }
+
+            var usuarioLogadoId = HttpContext.Session.GetInt32("IdUsuario");
+
+            if (usuario.Id == usuarioLogadoId)
+            {
+                TempData["Erro"] = "Você não pode excluir o próprio usuário logado.";
+                return RedirectToAction("Index");
             }
 
             _context.Usuarios.Remove(usuario);

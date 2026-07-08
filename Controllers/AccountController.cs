@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using UniGymFitness.Data;
 using UniGymFitness.Models;
-using System.Linq;
 
 namespace UniGymFitness.Controllers
 {
@@ -23,8 +22,12 @@ namespace UniGymFitness.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Login(string Email, string Senha)
         {
+            Email = Email?.Trim() ?? string.Empty;
+            Senha = Senha ?? string.Empty;
+
             var usuario = _context.Usuarios
                 .FirstOrDefault(u => u.Email == Email);
 
@@ -67,13 +70,36 @@ namespace UniGymFitness.Controllers
         }
 
         [HttpPost]
-        public IActionResult Cadastro(Usuario usuario)
+        [ValidateAntiForgeryToken]
+        public IActionResult Cadastro(Usuario usuario, string ConfirmarSenha)
         {
+            usuario.Nome = usuario.Nome?.Trim() ?? string.Empty;
+            usuario.Email = usuario.Email?.Trim() ?? string.Empty;
+            usuario.Telefone = usuario.Telefone?.Trim() ?? string.Empty;
+            usuario.Plano = usuario.Plano?.Trim() ?? string.Empty;
             usuario.TipoUsuario = "Aluno";
+
+            if (usuario.Senha != ConfirmarSenha)
+            {
+                ModelState.AddModelError("Senha", "As senhas não conferem.");
+            }
+
+            if (_context.Usuarios.Any(u => u.Email == usuario.Email))
+            {
+                ModelState.AddModelError("Email", "Já existe uma conta cadastrada com este e-mail.");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return View(usuario);
+            }
+
             usuario.Senha = _passwordHasher.HashPassword(usuario, usuario.Senha);
 
             _context.Usuarios.Add(usuario);
             _context.SaveChanges();
+
+            TempData["Sucesso"] = "Cadastro realizado com sucesso. Faça login para continuar.";
 
             return RedirectToAction("Login");
         }

@@ -16,6 +16,7 @@
         <div class="card-body">
 
             <form asp-controller="Usuarios" asp-action="Editar" method="post" id="formEditarUsuario">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
                 <input type="hidden" asp-for="Id" />
                 <input type="hidden" asp-for="Senha" />
@@ -24,11 +25,13 @@
                 <div class="mb-3">
                     <label class="form-label">Nome completo</label>
                     <input asp-for="Nome" class="form-control" required />
+                    <span asp-validation-for="Nome" class="text-danger small"></span>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">E-mail</label>
                     <input asp-for="Email" class="form-control" type="email" required />
+                    <span asp-validation-for="Email" class="text-danger small"></span>
                 </div>
 
                 <div class="mb-3">
@@ -39,6 +42,7 @@
                            maxlength="15"
                            placeholder="(61) 99999-9999"
                            required />
+                    <span asp-validation-for="Telefone" class="text-danger small"></span>
                 </div>
 
                 <div class="mb-3">
@@ -48,6 +52,7 @@
                         <option value="Silver">Silver - R$ 129,90</option>
                         <option value="Gold">Gold - R$ 179,90</option>
                     </select>
+                    <span asp-validation-for="Plano" class="text-danger small"></span>
                 </div>
 
                 <div class="d-flex justify-content-between mt-4">
@@ -106,4 +111,6 @@
 
         });
     </script>
+
+    <partial name="_ValidationScriptsPartial" />
 }

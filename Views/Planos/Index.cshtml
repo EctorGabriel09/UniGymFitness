@@ -51,13 +51,16 @@
                         Editar
                     </a>
 
-                    <a asp-controller="Planos"
-                       asp-action="Excluir"
-                       asp-route-id="@plano.Id"
-                       class="btn btn-danger btn-sm"
-                       onclick="return confirm('Tem certeza que deseja excluir este plano?');">
-                        Excluir
-                    </a>
+                    <form asp-controller="Planos"
+                          asp-action="Excluir"
+                          asp-route-id="@plano.Id"
+                          method="post"
+                          class="d-inline"
+                          onsubmit="return confirm('Tem certeza que deseja excluir este plano?');">
+                        <button type="submit" class="btn btn-danger btn-sm">
+                            Excluir
+                        </button>
+                    </form>
                 </td>
             </tr>
         }

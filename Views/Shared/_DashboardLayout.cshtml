@@ -71,6 +71,20 @@
                 </div>
             }
 
+            @if (TempData["Erro"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+
+                    @TempData["Erro"]
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="alert">
+                    </button>
+
+                </div>
+            }
+
         </div>
 
         @RenderBody()
