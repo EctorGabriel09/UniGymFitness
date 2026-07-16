@@ -1,155 +1,139 @@
-<div align="center">
+# 🏋️ UniGymFitness
 
-<img src="wwwroot/images/logo/logo-preta.png" width="220"/>
+> Sistema web para gerenciamento de academias desenvolvido com **ASP.NET Core MVC (.NET 8)**, **C#**, **Entity Framework Core** e **MySQL**.
 
-# 🏋️ Uni Gym Fitness
+<p align="center">
 
-### Sistema Web para Gerenciamento de Academia
+[![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
+![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
+![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-512BD4?style=for-the-badge&logo=dotnet)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
-Projeto desenvolvido utilizando **ASP.NET Core MVC**, permitindo o gerenciamento completo de usuários, planos, produtos e área administrativa.
-
----
-
-![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-8.0-512BD4?style=for-the-badge&logo=dotnet)
-![C#](https://img.shields.io/badge/C%23-512BD4?style=for-the-badge&logo=csharp)
-![Entity Framework](https://img.shields.io/badge/Entity_Framework_Core-512BD4?style=for-the-badge)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-
-</div>
+</p>
 
 ---
 
-# 📌 Sobre o Projeto
+# 🚀 Demonstração
 
-A **Uni Gym Fitness** é uma aplicação web desenvolvida para simular o gerenciamento de uma academia.
+### 🌐 Aplicação Online
 
-O sistema possui uma área pública para visitantes e uma área administrativa destinada ao gerenciamento completo da academia.
+**Acesse aqui:**
 
-Durante o desenvolvimento foram aplicados conceitos de:
+https://unigymfitness-dvggfre8g0hhendn.centralus-01.azurewebsites.net/
 
-- Arquitetura MVC
-- Entity Framework Core
-- MySQL
-- Autenticação de usuários
-- Sessões
-- Criptografia de senha
-- CRUD completo
-- Dashboard Administrativo
-- Relatórios
+---
+
+# 📖 Sobre o projeto
+
+O **UniGymFitness** é um sistema web desenvolvido para auxiliar na gestão de academias.
+
+O projeto permite o gerenciamento de usuários, planos e produtos através de uma área administrativa completa, além de oferecer autenticação, dashboards e uma interface moderna e responsiva.
+
+Este projeto foi desenvolvido utilizando a arquitetura **MVC**, aplicando boas práticas de organização de código e desenvolvimento de software.
 
 ---
 
 # ✨ Funcionalidades
 
-## 👤 Área Pública
-
-- Página Inicial
-- Quem Somos
-- Planos
-- Contato
-- Cadastro de alunos
-- Login
-
----
-
-## 🔐 Área Administrativa
-
-- Dashboard
-- Controle de acesso por administrador
-- Logout
-
----
-
-## 👥 Usuários
-
-- Cadastrar
-- Editar
-- Excluir
-- Listar usuários
-
----
-
-## 💳 Planos
-
-- Cadastro de planos
-- Edição
-- Exclusão
-- Listagem
-
----
-
-## 🏋️ Produtos
-
-- Cadastro de produtos
-- Controle de estoque
-- Edição
-- Exclusão
-
----
-
-## 📊 Relatórios
-
-- Total de usuários
-- Total de administradores
-- Total de alunos
-- Total de planos
-- Total de produtos
-- Estoque total
-- Valor médio dos planos
+- ✅ Landing Page Responsiva
+- ✅ Sistema de Login
+- ✅ Cadastro de Usuários
+- ✅ Dashboard Administrativo
+- ✅ Gerenciamento de Usuários
+- ✅ Gerenciamento de Planos
+- ✅ Gerenciamento de Produtos
+- ✅ Área Administrativa
+- ✅ Interface Responsiva
 
 ---
 
 # 🛠 Tecnologias Utilizadas
 
-- ASP.NET Core MVC
 - C#
+- ASP.NET Core MVC (.NET 8)
 - Entity Framework Core
 - MySQL
-- Bootstrap 5
 - HTML5
 - CSS3
 - JavaScript
+- Bootstrap
 
 ---
 
-# 📂 Estrutura do Projeto
+# 🏛 Arquitetura
 
-```text
-Controllers/
-Models/
-Views/
-Data/
-wwwroot/
-Migrations/
-Program.cs
-appsettings.json
+O projeto foi desenvolvido utilizando o padrão arquitetural **MVC (Model-View-Controller)**.
+
+```
+Controllers
+Models
+Views
+Data
+Migrations
+wwwroot
 ```
 
 ---
 
-# 🗄 Banco de Dados
+# 📷 Screenshots
 
-O projeto utiliza **MySQL** juntamente com o **Entity Framework Core**.
+## 🏠 Página Inicial
 
-Entidades principais:
-
-- Usuários
-- Planos
-- Produtos
+![](docs/home.png)
 
 ---
 
-# 🚀 Como executar o projeto
+## 🔐 Login
+
+![](docs/login.png)
+
+---
+
+## 👤 Cadastro
+
+![](docs/cadastro.png)
+
+---
+
+## 📊 Dashboard Administrativo
+
+![](docs/dashboard-admin.png)
+
+---
+
+## 🧑 Área do Aluno
+
+![](docs/dashboard-aluno.png)
+
+---
+
+## 💳 Planos
+
+![](docs/planos.png)
+
+---
+
+# 💻 Como executar o projeto
 
 ```bash
-git clone https://github.com/SEU-USUARIO/UniGymFitness.git
+git clone https://github.com/EctorGabriel09/UniGymFitness.git
+```
 
+Depois:
+
+```bash
 cd UniGymFitness
+```
 
+Configure a conexão com o banco de dados no arquivo:
+
+```text
+appsettings.json
+```
+
+Depois execute:
+
+```bash
 dotnet restore
 
 dotnet ef database update
@@ -159,44 +143,27 @@ dotnet run
 
 ---
 
-# ☁️ Hospedagem
+# 📈 Próximas melhorias
 
-O site está hospedado no Azure App Service:
-
-https://unigymfitness-dvggfre8g0hhendn.centralus-01.azurewebsites.net/
-
----
-
-# 📷 Capturas de Tela
-
-As imagens abaixo estão disponíveis em `wwwroot/images/readme/`.
-
-<div align="center">
-  <img src="wwwroot/images/readme/Captura%20de%20tela%202026-07-03%20214313.png" alt="Tela inicial" width="280"/>
-  <img src="wwwroot/images/readme/Captura%20de%20tela%202026-07-03%20214339.png" alt="Login" width="280"/>
-  <img src="wwwroot/images/readme/Captura%20de%20tela%202026-07-03%20214349.png" alt="Dashboard" width="280"/>
-</div>
-
-<div align="center" style="margin-top: 16px;">
-  <img src="wwwroot/images/readme/Captura%20de%20tela%202026-07-03%20214405.png" alt="Usuários" width="280"/>
-  <img src="wwwroot/images/readme/Captura%20de%20tela%202026-07-03%20214448.png" alt="Planos" width="280"/>
-  <img src="wwwroot/images/readme/Captura%20de%20tela%202026-07-03%20214510.png" alt="Produtos e relatórios" width="280"/>
-</div>
+- Upload de imagens
+- Controle financeiro
+- Dashboard com gráficos
+- API REST
+- Responsividade aprimorada
+- Testes automatizados
 
 ---
 
 # 👨‍💻 Autor
 
-## Ector Gabriel de Morais Teixeira
+**Ector Gabriel de Morais Teixeira**
 
-🎓 Sistemas de Informação — UNIDESC
+- 💼 LinkedIn
+  https://www.linkedin.com/in/ector-gabriel/
 
-Projeto desenvolvido como atividade acadêmica da disciplina de Desenvolvimento Web utilizando ASP.NET Core MVC.
+- 💻 GitHub
+  https://github.com/EctorGabriel09
 
 ---
 
-<div align="center">
-
-### ⭐ Se este projeto foi interessante, deixe uma estrela no repositório!
-
-</div>
+## ⭐ Se este projeto foi interessante para você, deixe uma estrela no repositório!
